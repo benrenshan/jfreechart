@@ -1,9 +1,10 @@
-package org.jfree.homework.PieChart;
+package org.jfree.softwareTestingAndAnalysis.PieChart;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.awt.Color;
@@ -15,10 +16,10 @@ import static org.junit.Assert.*;
 public class PieChartPropertyTest {
     private JFreeChart createTestChart() {
         DefaultPieDataset dataset = new DefaultPieDataset();
-        dataset.setValue("One", valueOf(10.0));
-        dataset.setValue("Two", valueOf(20.0));
-        dataset.setValue("Three", valueOf(30.0));
-        dataset.setValue("Four", valueOf(40.0));
+        dataset.setValue("One", Double.valueOf(10.0));
+        dataset.setValue("Two", Double.valueOf(20.0));
+        dataset.setValue("Three", Double.valueOf(30.0));
+        dataset.setValue("Four", Double.valueOf(40.0));
 
         return ChartFactory.createPieChart(
                 "Test Chart",
@@ -32,14 +33,14 @@ public class PieChartPropertyTest {
     @Test
     public void testChartTitle() {
         JFreeChart chart = createTestChart();
-        assertEquals("Test Chart", chart.getTitle().getText());
+        Assert.assertEquals("Test Chart", chart.getTitle().getText());
     }
 
     @Test
     public void testChartBackgroundPaint() {
         JFreeChart chart = createTestChart();
         chart.setBackgroundPaint(Color.BLUE);
-        assertEquals(Color.BLUE, chart.getBackgroundPaint());
+        Assert.assertEquals(Color.BLUE, chart.getBackgroundPaint());
     }
 
     // Repeat similar tests for 20 different chart properties. The following are a few examples.
@@ -47,20 +48,20 @@ public class PieChartPropertyTest {
     @Test
     public void testChartLegend() {
         JFreeChart chart = createTestChart();
-        assertNotNull(chart.getLegend());
+        Assert.assertNotNull(chart.getLegend());
     }
 
     @Test
     public void testChartNoLegend() {
         JFreeChart chart = createTestChart();
         chart.removeLegend();
-        assertNull(chart.getLegend());
+        Assert.assertNull(chart.getLegend());
     }
 
     @Test
     public void testChartSubtitleCount() {
         JFreeChart chart = createTestChart();
-        assertEquals(1, chart.getSubtitleCount());
+        Assert.assertEquals(1, chart.getSubtitleCount());
     }
 
     @Test
@@ -68,7 +69,7 @@ public class PieChartPropertyTest {
         JFreeChart chart = createTestChart();
         PiePlot plot = (PiePlot) chart.getPlot();
         plot.setBackgroundPaint(Color.RED);
-        assertEquals(Color.RED, plot.getBackgroundPaint());
+        Assert.assertEquals(Color.RED, plot.getBackgroundPaint());
     }
 
     @Test
@@ -76,14 +77,14 @@ public class PieChartPropertyTest {
         JFreeChart chart = createTestChart();
         PiePlot plot = (PiePlot) chart.getPlot();
         plot.setOutlinePaint(Color.GREEN);
-        assertEquals(Color.GREEN, plot.getOutlinePaint());
+        Assert.assertEquals(Color.GREEN, plot.getOutlinePaint());
     }
 
     @Test
     public void testChartPlotLabelFont() {
         JFreeChart chart = createTestChart();
         PiePlot plot = (PiePlot) chart.getPlot();
-        assertNotNull(plot.getLabelFont());
+        Assert.assertNotNull(plot.getLabelFont());
     }
 
 
@@ -92,7 +93,7 @@ public class PieChartPropertyTest {
         JFreeChart chart = createTestChart();
         PiePlot plot = (PiePlot) chart.getPlot();
         plot.setLabelPaint(Color.BLUE);
-        assertEquals(Color.BLUE, plot.getLabelPaint());
+        Assert.assertEquals(Color.BLUE, plot.getLabelPaint());
     }
 
 
@@ -101,7 +102,7 @@ public class PieChartPropertyTest {
         JFreeChart chart = createTestChart();
         PiePlot plot = (PiePlot) chart.getPlot();
         plot.setLabelBackgroundPaint(Color.YELLOW);
-        assertEquals(Color.YELLOW, plot.getLabelBackgroundPaint());
+        Assert.assertEquals(Color.YELLOW, plot.getLabelBackgroundPaint());
     }
 
     @Test
@@ -109,7 +110,7 @@ public class PieChartPropertyTest {
         JFreeChart chart = createTestChart();
         PiePlot plot = (PiePlot) chart.getPlot();
         plot.setOutlineVisible(true);
-        assertTrue(plot.isOutlineVisible());
+        Assert.assertTrue(plot.isOutlineVisible());
     }
 
     @Test
@@ -117,7 +118,7 @@ public class PieChartPropertyTest {
         JFreeChart chart = createTestChart();
         PiePlot plot = (PiePlot) chart.getPlot();
         plot.setOutlineVisible(false);
-        assertFalse(plot.isOutlineVisible());
+        Assert.assertFalse(plot.isOutlineVisible());
     }
 
     @Test
@@ -125,7 +126,7 @@ public class PieChartPropertyTest {
         JFreeChart chart = createTestChart();
         PiePlot plot = (PiePlot) chart.getPlot();
         plot.setLabelLinksVisible(true);
-        assertTrue(plot.getLabelLinksVisible());
+        Assert.assertTrue(plot.getLabelLinksVisible());
     }
 
     @Test
@@ -133,7 +134,7 @@ public class PieChartPropertyTest {
         JFreeChart chart = createTestChart();
         PiePlot plot = (PiePlot) chart.getPlot();
         plot.setLabelLinksVisible(false);
-        assertFalse(plot.getLabelLinksVisible());
+        Assert.assertFalse(plot.getLabelLinksVisible());
     }
 
     @Test
@@ -141,7 +142,7 @@ public class PieChartPropertyTest {
         JFreeChart chart = createTestChart();
         PiePlot plot = (PiePlot) chart.getPlot();
         plot.setShadowPaint(Color.GRAY);
-        assertEquals(Color.GRAY, plot.getShadowPaint());
+        Assert.assertEquals(Color.GRAY, plot.getShadowPaint());
     }
 
     @Test
@@ -149,7 +150,7 @@ public class PieChartPropertyTest {
         JFreeChart chart = createTestChart();
         PiePlot plot = (PiePlot) chart.getPlot();
         plot.setShadowXOffset(5.0);
-        assertEquals(5.0, plot.getShadowXOffset(), 0.0001);
+        Assert.assertEquals(5.0, plot.getShadowXOffset(), 0.0001);
     }
 
     @Test
@@ -157,7 +158,7 @@ public class PieChartPropertyTest {
         JFreeChart chart = createTestChart();
         PiePlot plot = (PiePlot) chart.getPlot();
         plot.setShadowYOffset(5.0);
-        assertEquals(5.0, plot.getShadowYOffset(), 0.0001);
+        Assert.assertEquals(5.0, plot.getShadowYOffset(), 0.0001);
     }
 
 }

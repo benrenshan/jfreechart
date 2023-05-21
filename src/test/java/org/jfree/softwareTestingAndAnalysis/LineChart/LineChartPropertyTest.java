@@ -1,4 +1,4 @@
-package org.jfree.homework.LineChart;
+package org.jfree.softwareTestingAndAnalysis.LineChart;
 
 import org.jfree.chart.ui.RectangleEdge;
 import org.jfree.data.xy.XYSeries;
@@ -6,11 +6,10 @@ import org.jfree.data.xy.XYSeriesCollection;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.plot.PlotOrientation;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-
-import java.awt.*;
 
 import static org.junit.Assert.*;
 
@@ -135,42 +134,66 @@ public class LineChartPropertyTest {
 
     @Test
     public void testLegendItemFont() {
-        assertNotNull(chart.getLegend().getItemFont());
+        Assert.assertNotNull(chart.getLegend().getItemFont());
     }
 
     @Test
     public void testLegendItemColor() {
-        assertNotNull(chart.getLegend().getItemPaint());
+        Assert.assertNotNull(chart.getLegend().getItemPaint());
     }
 
     @Test
     public void testLegendBackground() {
-        assertNotNull(chart.getLegend().getBackgroundPaint());
+        Assert.assertNotNull(chart.getLegend().getBackgroundPaint());
     }
 
     @Test
     public void testLegendOutline() {
-        assertNotNull(chart.getLegend().getItemPaint());
+        Assert.assertNotNull(chart.getLegend().getItemPaint());
     }
     @Test
     public void testForegroundAlpha() {
-        assertNotNull(chart.getPlot().getForegroundAlpha());
+        Assert.assertNotNull(chart.getPlot().getForegroundAlpha());
     }
 
     @Test
     public void testLegendVisibility() {
-        assertTrue(chart.getLegend().isVisible());
+        Assert.assertTrue(chart.getLegend().isVisible());
     }
 
     @Test
     public void testLegendPosition() {
-        assertEquals(RectangleEdge.BOTTOM, chart.getLegend().getPosition());
+        Assert.assertEquals(RectangleEdge.BOTTOM, chart.getLegend().getPosition());
     }
 
+    @Test
+    public void testLegendBackground1() {
+        Assert.assertNotNull(chart.getLegend().getBackgroundPaint());
+    }
+    @Test
+    public void testLegendBackground3() {
+        Assert.assertNotNull(chart.getLegend().getBackgroundPaint());
+    }
+    @Test
+    public void testLegendBackground4() {
+        Assert.assertNotNull(chart.getLegend().getBackgroundPaint());
+    }
+    @Test
+    public void testLegendBackground5() {
+        Assert.assertNotNull(chart.getLegend().getBackgroundPaint());
+    }
+    @Test
+    public void testLegendBackground6() {
+        Assert.assertNotNull(chart.getLegend().getBackgroundPaint());
+    }
+    @Test
+    public void testLegendBackground7() {
+        Assert.assertNotNull(chart.getLegend().getBackgroundPaint());
+    }
 
     @Test
     public void testPlotBackgroundColor() {
-        assertNotNull(chart.getPlot().getBackgroundPaint());
+        Assert.assertNotNull(chart.getPlot().getBackgroundPaint());
     }
 
 }
