@@ -291,14 +291,15 @@ public class DefaultCategoryDataset extends AbstractDataset
      * Removes a value from the dataset and sends a {@link DatasetChangeEvent}
      * to all registered listeners.
      *
-     * @param rowKey  the row key.
-     * @param columnKey  the column key.
-     *
+     * @param rowKey    the row key.
+     * @param columnKey the column key.
+     * @return
      * @see #addValue(Number, Comparable, Comparable)
      */
-    public void removeValue(Comparable rowKey, Comparable columnKey) {
+    public Object removeValue(Comparable rowKey, Comparable columnKey) {
         this.data.removeValue(rowKey, columnKey);
         fireDatasetChanged();
+        return null;
     }
 
     /**
